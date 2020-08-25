@@ -26,7 +26,9 @@ import kotlinx.android.synthetic.main.fragment_task_list.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.*
 import javax.inject.Inject
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 
@@ -72,12 +74,26 @@ class TaskListFragment : Fragment() {
         }
         iv_add.setOnClickListener {
             val direction =
-                TaskListFragmentDirections.actionTasksFragmentToTaskDetailFragment(listTask.size + 1, false)
+                TaskListFragmentDirections.actionTasksFragmentToTaskDetailFragment(generateRandom(
+                    listTask.map { task -> task.id }), false)
             it.findNavController().navigate(direction)
         }
         btn_toggle_id.setOnClickListener {
             updateAdapter()
         }
+    }
+
+
+    fun generateRandom(exclude: List<Int>): Int {
+        val rand = Random()
+        var random = rand.nextInt(10000) + 1
+        for (i in 0 until 10000) {
+            if (!exclude.contains(random)) {
+                return random
+            }
+            random++
+        }
+        return random
     }
 
     private fun updateAdapter(){
