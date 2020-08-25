@@ -37,8 +37,8 @@ class Converters {
 
     @TypeConverter
     fun stringToArrayListHashmap(value: String): ArrayList<HashMap<String, Any>> {
-        val venueType = object : TypeToken<ArrayList<HashMap<String, Any>>>() {}.type
-        return Gson().fromJson(value, venueType)
+        val taskType = object : TypeToken<ArrayList<HashMap<String, Any>>>() {}.type
+        return Gson().fromJson(value, taskType)
     }
 
     @TypeConverter
@@ -46,8 +46,8 @@ class Converters {
 
     @TypeConverter
     fun stringTohashmap(value: String): HashMap<String, Any> {
-        val venueType = object : TypeToken<HashMap<String, Any>>() {}.type
-        return Gson().fromJson(value, venueType)
+        val taskType = object : TypeToken<HashMap<String, Any>>() {}.type
+        return Gson().fromJson(value, taskType)
     }
 
 
@@ -56,8 +56,8 @@ class Converters {
 
     @TypeConverter
     fun stringToAny(value: String): Any {
-        val venueType = object : TypeToken<Any>() {}.type
-        return Gson().fromJson(value, venueType)
+        val taskType = object : TypeToken<Any>() {}.type
+        return Gson().fromJson(value, taskType)
     }
 
 }

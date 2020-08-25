@@ -27,8 +27,8 @@ import kotlinx.coroutines.launch
 
 
 /**
- * Adapter for the [RecyclerView] in [VenueItemsFragment].
- * * responsible for displaying all the venues from current location
+ * Adapter for the [RecyclerView] in [TaskListFragment].
+ * * responsible for displaying all the tasks retrieved
  */
 class TodoAdapter : ListAdapter<Task, TodoAdapter.ViewHolder>(TodoDiffCallback()) {
 
