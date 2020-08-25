@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/tasks_fragment">
+
+    <fragment
+        android:id="@+id/tasks_fragment"
+        android:name="com.ainsigne.wesoarhightodo_ainsigne.ui.fragments.TaskListFragment"
+        android:label="Tasks"
+        tools:layout="@layout/fragment_task_list">
+
+        <action
+            android:id="@+id/action_tasks_fragment_to_task_detail_fragment"
+            app:destination="@id/task_details_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/task_details_fragment"
+        android:name="com.ainsigne.wesoarhightodo_ainsigne.ui.fragments.TaskEntryFragment"
+        android:label="Task Details"
+        tools:layout="@layout/fragment_task_entry">
+        <argument
+            android:name="taskId"
+            app:argType="integer" />
+        <argument
+            android:name="taskUpdate"
+            app:argType="boolean" />
+    </fragment>
+
+
+
+
+</navigation>
