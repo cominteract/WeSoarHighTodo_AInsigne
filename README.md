@@ -9,6 +9,7 @@
   so installing room did the job of the crud operations
   From the task list clicking a single task brings up the detail view where you can update its title, date and whether it is completed.
   You can also add a task from the plus button at the top it brings up the detail view where you can update its title, date and whether it is completed.
+  After finishing making the edits. You can press submit to insert or update the task.
   After either updating or inserting a task. It will go back to the task list with the task list updated
 
   I also added unit testing and adding a fake build for testing without relying on the api
